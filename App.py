@@ -55,10 +55,7 @@ except Exception as e:
 
 # ── Flask ──────────────────────────────────────────────────────
 app = Flask(__name__)
-CORS(app, origins=[
-    "http://localhost:5173", "http://localhost:5174",
-    "http://127.0.0.1:5173", "http://127.0.0.1:5174"
-])
+CORS(app, origins=["http://localhost:5173", "http://localhost:5174", "http://127.0.0.1:5173", "http://127.0.0.1:5174", "https://softdesbg6-frontend-6nqw.vercel.app"])
 
 BUCKET = "pothole-media"
 
@@ -762,3 +759,4 @@ if __name__ == "__main__":
     print(f"   YOLO  : {'loaded' if model else 'MISSING — place best.pt in backend/weights/'}")
     print(f"   DB    : {'connected' if supabase else 'disconnected'}")
     app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)), debug=True)
+
